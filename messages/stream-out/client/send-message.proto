@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package client.stream.out;
+
+// The message to send to a client
+message SendMessage {
+
+  // The date the message was created
+  Date date = 1;
+
+  // The time the message was created
+  Time time = 2;
+
+  // The content of the message
+  string content = 3;
+}
+
+// The date the message was sent
+message Date {
+
+  // Represents the day [1, 31]
+  int32 day = 1;
+
+  // Represents the month [1, 12]
+  int32 month = 2;
+
+  // Represents the four digit year
+  int32 year = 3;
+}
+
+// The time the message was sent
+message Time {
+
+  // Represents the 24 hour of the day [0, 24)
+  int32 hour = 1;
+
+  // Represents the minute in the hours [0, 60)
+  int32 minute = 2;
+}
